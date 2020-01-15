@@ -1,0 +1,29 @@
+QUESTION WAS ASKED IN GOOGLE AND MICROSOFT
+#SOLUTION
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def plusOne(self, A):
+        for i in range(len(A)):
+            if A[i] != 0: break
+        A = A[min(len(A)-1,i):]
+        carry = 1
+        for i in range(len(A)-1, -1, -1):
+            A[i] += carry
+            carry = A[i] / 10
+            A[i] = A[i] % 10
+            if carry == 0: break
+        if carry > 0:
+            A = [carry] + A
+        return A
+        
+ #FASTEST SOLUTION::
+ class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def plusOne(self, A):
+        s=""
+        for i in A:
+            s+=str(i)
+        s=int(s)
+        return str(s+1)
