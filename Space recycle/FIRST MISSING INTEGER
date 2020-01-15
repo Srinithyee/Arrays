@@ -1,0 +1,13 @@
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def firstMissingPositive(self, A):
+        positive = {}
+        mypos = 1
+        for n in A:
+            if n>0:
+                positive[n]=1
+        while positive.get(mypos,0):
+            mypos+=1
+        
+        return mypos
